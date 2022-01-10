@@ -5,17 +5,15 @@
 #Recursive solution
 
 class RomanNumerals:
-    r = [('M', 1000), ('CM', 900), ('D', 500), 
-        ('CD', 400), ('C', 100), ('XC', 90), ('L', 50), ('XL', 40), 
-        ('X', 10), ('IX', 9), ('V', 5), ('IV', 4), ('I', 1)
-        ]
-
-    v = [('CM', 900), ('CD', 400), ('XC', 90), ('XL', 40), ('IX', 9),('IV', 4), 
+    a = [('M', 1000), ('CM', 900), ('D', 500), ('CD', 400), ('C', 100), ('XC', 90), 
+         ('L', 50), ('XL', 40), ('X', 10), ('IX', 9), ('V', 5), ('IV', 4), ('I', 1)]
+    
+    b = [('CM', 900), ('CD', 400), ('XC', 90), ('XL', 40), ('IX', 9),('IV', 4), 
          ('M', 1000), ('D', 500),('C', 100),('L', 50),('X', 10),('V', 5),('I', 1)]
 
     def to_roman(val, r=None):
         if r == None:
-            r = RomanNumerals.r
+            r = RomanNumerals.a
         if not r:
             return ""
         elif val < r[0][1]:
@@ -23,10 +21,9 @@ class RomanNumerals:
         else:
             return r[0][0] + RomanNumerals.to_roman(val-r[0][1], r)
 
-
     def from_roman(roman_num, r=None):
         if r == None:
-            r = RomanNumerals.v
+            r = RomanNumerals.b
         if not r:
             return 0
         elif r[0][0] not in roman_num:
