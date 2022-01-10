@@ -5,8 +5,8 @@
 #Recursive solution
 
 class RomanNumerals:
-    h = [('CM', 900), ('CD', 400), ('XC', 90), ('XL', 40), ('IX', 9),('IV', 4), 
-         ('M', 1000), ('D', 500),('C', 100),('L', 50),('X', 10),('V', 5),('I', 1)]
+    h = [('CM', 900), ('CD', 400), ('XC', 90), ('XL', 40), ('IX', 9), ('IV', 4), 
+         ('M', 1000), ('D', 500), ('C', 100), ('L', 50), ('X', 10), ('V', 5), ('I', 1)]
 
     def to_roman(val, r=None):
         if r == None:
@@ -32,7 +32,7 @@ class RomanNumerals:
     
 class RomanNumerals:
     h = [('CM', 900), ('CD', 400), ('XC', 90), ('XL', 40), ('IX', 9), ('IV', 4), 
-         ('M', 1000), ('D', 500),('C', 100),('L', 50),('X', 10),('V', 5),('I', 1)]
+         ('M', 1000), ('D', 500), ('C', 100), ('L', 50), ('X', 10), ('V', 5), ('I', 1)]
 
     def to_roman(val):
         r = sorted(RomanNumerals.h, key=lambda x: x[1], reverse=True)
@@ -51,6 +51,3 @@ class RomanNumerals:
             roman_num = roman_num.replace(i[0], "")
 
         return s
-      
-      
-      
