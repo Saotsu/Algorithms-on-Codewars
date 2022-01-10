@@ -18,8 +18,8 @@ class RomanNumerals:
             return ""
         elif val < r[0][1]:
             return "" + RomanNumerals.to_roman(val, r[1:])
-        else:
-            return r[0][0] + RomanNumerals.to_roman(val-r[0][1], r)
+        
+        return r[0][0] + RomanNumerals.to_roman(val-r[0][1], r)
 
     def from_roman(roman_num, r=None):
         if r == None:
@@ -28,8 +28,8 @@ class RomanNumerals:
             return 0
         elif r[0][0] not in roman_num:
             return 0 + RomanNumerals.from_roman(roman_num, r[1:])
-        else:
-            return r[0][1] + RomanNumerals.from_roman(roman_num.replace(r[0][0], "", 1), r)
+        
+        return r[0][1] + RomanNumerals.from_roman(roman_num.replace(r[0][0], "", 1), r)
     
 #Iterative solution
     
