@@ -15,24 +15,23 @@ class RomanNumerals:
     def to_roman(val, r=None):
         if r == None:
             r = RomanNumerals.r
-        s = ""
-        if r:
-            while val >= r[0][1]:
-                val -= r[0][1]
-                s += r[0][0]
-            return s + RomanNumerals.to_roman(val, r[1:])
-        return ""
+        if not r:
+            return ""
+        elif val < r[0][1]:
+            return "" + RomanNumerals.to_roman(val, r[1:])
+        else:
+            return r[0][0] + RomanNumerals.to_roman(val-r[0][1], r)
+
 
     def from_roman(roman_num, r=None):
         if r == None:
             r = RomanNumerals.v
-        g = 0
-        if r:
-            while r[0][0] in roman_num:
-                roman_num = roman_num.replace(r[0][0], "", 1)
-                g += r[0][1]
-            return g + RomanNumerals.from_roman(roman_num, r[1:])
-        return 0
+        if not r:
+            return 0
+        elif r[0][0] not in roman_num:
+            return 0 + RomanNumerals.from_roman(roman_num, r[1:])
+        else:
+            return r[0][1] + RomanNumerals.from_roman(roman_num.replace(r[0][0], "", 1), r)
     
     #Iterative solution
     
