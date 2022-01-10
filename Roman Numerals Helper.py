@@ -31,9 +31,9 @@ class RomanNumerals:
         else:
             return r[0][1] + RomanNumerals.from_roman(roman_num.replace(r[0][0], "", 1), r)
     
-    #Iterative solution
+#Iterative solution
     
-    class RomanNumerals:
+class RomanNumerals:
     def to_roman(val):
         r = [('M', 1000), ('CM', 900), ('D', 500), ('CD', 400), ('C', 100), ('XC', 90), 
         ('L', 50), ('XL', 40), ('X', 10), ('IX', 9), ('V', 5), ('IV', 4), ('I', 1)]
