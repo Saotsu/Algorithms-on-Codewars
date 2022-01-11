@@ -10,4 +10,4 @@ def digital_root(n):
 digital_root = lambda n: n if len(str(n)) == 1 else digital_root(sum(int(b) for b in str(n)))
 
 #Best solution
-digital_root = lambda i: 1+(int(i)-1)%9
+digital_root = lambda i: [0,1+(int(i)-1)%9][i>0]
