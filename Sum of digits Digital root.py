@@ -8,3 +8,6 @@ def digital_root(n):
 
 #Recursive solution
 digital_root = lambda n: n if len(str(n)) == 1 else digital_root(sum(int(b) for b in str(n)))
+
+#Best solution
+digital_root = lambda i: 1+(int(i)-1)%9
