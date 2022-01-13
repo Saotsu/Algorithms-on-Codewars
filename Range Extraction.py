@@ -12,11 +12,11 @@ def solution(args):
                 d = -1
                 c = [args[i]] + [e]
             else:
-                return f'{args[i]},' + solution(args[i+1:])
+                return f'{args[i]}, ' + solution(args[i+1:])
         elif e == c[-1] + d:
             c.append(e)
         elif len(c) >= 3:
-            return f'{c[0]}-{c[-1]},' + solution(args[i+1:])
+            return f'{c[0]}-{c[-1]}, ' + solution(args[i+1:])
         else:
-            return (",".join(str(l) for l in c)) + "," + solution(args[i+1:])
-    return f'{c[0]}-{c[-1]}' if len(c) >= 3 else str(args[-1]) if not c else ",".join(str(l) for l in c)
+            return (', '.join(str(l) for l in c)) + ', ' + solution(args[i+1:])
+    return f'{c[0]}-{c[-1]}' if len(c) >= 3 else str(args[-1]) if not c else ', '.join(str(l) for l in c)
