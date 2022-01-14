@@ -9,7 +9,7 @@ def list_squared(m, n):
         return sum(set(s))
     
     results = []
-    for x in range(m, n):
+    for x in range(m, n+1):
         s = squared(x)
         if (s**0.5) % 1 == 0:
             results.append([x, s])
