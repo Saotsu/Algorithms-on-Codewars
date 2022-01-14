@@ -3,4 +3,7 @@
 from re import findall
 
 def order(sentence):
-    return ' '.join(word[1] for word in sorted([(int((findall(r"\d+", word)[0])), word) for word in sentence.split()]))
+    l = []
+    for word in sentence.split():
+        l.append((int((findall(r"\d+", word)[0])), word))
+    return ' '.join(word[1] for word in sorted(l))
