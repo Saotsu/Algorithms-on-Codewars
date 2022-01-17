@@ -27,4 +27,4 @@ def sudoku(puzzle):
                             return puzzle
                         puzzle[y][x] = 0
                 else:
-                    return
+                    return None
