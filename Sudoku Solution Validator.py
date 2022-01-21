@@ -5,9 +5,9 @@ def valid_solution(board):
        for h in range(3):
             y = g * 3
             x = h * 3
-            if len(set([board[m][n] for m in range(y, y+3) for n in range(x, x+3)])) != 9:
+            if len(set(board[y][x:x+3]+board[y+1][x:x+3]+board[y+2][x:x+3])) != 9:
                 return False
-
+                
     for y in board:
         if len(set(y)) != 9:
             return False
